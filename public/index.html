@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Museo Metropolitano de NY</title>
+</head>
+<body>
+    <header>
+        <h1>Galería del Museo Metropolitano de NY</h1>
+        <div>
+            <label for="department">Departamento:</label>
+            <select id="department">
+                <!-- Opciones de departamento se cargarán aquí -->
+            </select>
+        </div>
+        <div>
+            <label for="keyword">Palabra clave:</label>
+            <input type="text" id="keyword" placeholder="Ingresa una palabra clave">
+        </div>
+        <select id="location">
+            <option value="">Selecciona una localización</option>
+            <option value="Europe">Europa</option>
+            <option value="China">China</option>
+            <option value="United States">Estados Unidos</option>
+            <option value="France">Francia</option>
+            <!-- Agregar más localizaciones aquí -->
+        </select>
+        <button id="search">Buscar</button>
+    </header>
+    
+    <main>
+        <div id="gallery" class="gallery">
+            <!-- Las imágenes de los objetos se mostrarán aquí -->
+        </div>
+        
+        <div id="pagination" class="pagination">
+            <!-- Botones de paginación se generarán aquí -->
+        </div>
+        <div id="loading" style="display: none;">Realizando petición a la API...</div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
