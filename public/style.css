@@ -1,9 +1,10 @@
 /* Estilos generales */
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fafafa;
+    background-color: #e0f7fa; /* Color frío de fondo */
     color: #333;
 }
 
@@ -13,6 +14,7 @@ header {
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #ddd;
+    position: relative;
 }
 
 /* Fondo de imagen debajo de input y select */
@@ -23,36 +25,52 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/public/portada.jpg'); /* Ruta a tu imagen en la carpeta raíz */
+    background-image: url('./portada.jpg'); /* Ruta a tu imagen en la carpeta raíz */
     background-size: cover;
     background-position: center;
     opacity: 0.2; /* Controla la transparencia del fondo */
     z-index: -1; /* Coloca la imagen detrás de los input y select */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap'); /* Importa una fuente más seria */
+
 header h1 {
-    margin: 0;
+    font-family: 'Cinzel', serif; /* Fuente más seria y elegante */
     font-size: 2.5rem;
+    color: #34495e; /* Color azul oscuro sobrio */
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    letter-spacing: 2px; /* Espaciado moderado entre letras */
 }
 
 header div {
     margin: 10px 0;
 }
 
+/* Estilo de los inputs largos y finos con bordes transparentes y semi redondeados */
 header input, header select {
+    display: block;
+    width: 80%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin: 10px auto;
+    border: 1px solid transparent; /* Bordes transparentes */
+    border-radius: 10px; /* Bordes semi-redondeados */
     font-size: 1rem;
-    margin-left: 5px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Botón rectangular, pequeño y de color frío */
 button#search {
-    background: #28a745;
+    display: block;
+    margin: 20px auto;
+    background: #00796b; /* Color frío del botón */
     color: white;
     border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
+    padding: 8px 20px;
+    font-size: 0.9rem;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -60,7 +78,7 @@ button#search {
 }
 
 button#search:hover {
-    background: #218838;
+    background: #004d40; /* Color frío oscuro al hacer hover */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -81,7 +99,7 @@ main {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     overflow: hidden;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente para las tarjetas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -115,6 +133,26 @@ main {
     color: #555;
 }
 
+
+/*
+
+#additional-images-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#additional-images-gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+*/
+
+
+
+
 /* Estilos para la paginación */
 .pagination {
     display: flex;
@@ -142,16 +180,6 @@ main {
 .pagination button[disabled] {
     background-color: #ccc;
     cursor: not-allowed;
-}
-
-/* Mejora para los inputs de búsqueda */
-input[type="text"], select {
-    width: 200px;
-    padding: 10px;
-    margin: 0 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
 }
 
 /* Mejoras para dispositivos móviles */
