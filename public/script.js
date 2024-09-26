@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Realizando búsqueda con la URL: ${url}`);
         const response = await fetch(url);
         const data = await response.json();
+        console.log("Resultados de la búsqueda:", data);
         const objects = data.objectIDs || [];
         console.log("IDs de objetos recibidos:", objects);
 
@@ -101,9 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     async function translateText(text, targetLang = 'es') {
+        if(text === '') return text;
         try {
 
-            console.log({ text: text, targetLang: targetLang });
+            //console.log({ text: text, targetLang: targetLang });
             const response = await fetch('/translate',{
                 method: 'POST',
                 headers: {
@@ -115,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return result.translatedText;
             
         } catch (error) {
-            console.error('Error al traducir el texto:', error);
+            console.error('Error al traducir texto:', error);
             return text; // Devuelve el texto original si hay un error
         }
     }
