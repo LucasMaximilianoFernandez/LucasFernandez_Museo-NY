@@ -124,6 +124,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    // Función para crear un modal
+function createModal(images) {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="image-gallery">
+                ${images.map(image => `<img src="${image}" alt="Additional Image">`).join('')}
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Cerrar el modal
+    modal.querySelector('.close-button').addEventListener('click', () => {
+        modal.remove();
+    });
+
+    // Mostrar el modal
+    modal.style.display = 'block';
+}
+
+
+
+
 
     // Función que crea las tarjetas de los objetos
     async function createCard(object) {
@@ -151,6 +178,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         card.appendChild(img);
         card.appendChild(content);
+
+        // Si el objeto tiene imágenes adicionales, mostramos el botón para abrir un modal
+        if (object.additionalImages && object.additionalImages.length > 0) {
+            const viewMoreButton = document.createElement('button');
+            viewMoreButton.textContent = 'Ver imágenes adicionales';
+            viewMoreButton.addEventListener('click', () => {
+                createModal(object.additionalImages);
+            });
+            card.appendChild(viewMoreButton);
+        }
+
+
         gallery.appendChild(card);
     }
 

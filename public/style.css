@@ -133,24 +133,56 @@ main {
     color: #555;
 }
 
-
-/*
-
-#additional-images-gallery {
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+    /* Flexbox para centrar el modal */
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;  /* Centrar horizontalmente */
+    align-items: center;      /* Centrar verticalmente */
 }
 
-#additional-images-gallery img {
-    width: 200px;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.modal-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    max-height: 90%;
+    overflow-y: auto;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Añadir sombra para mayor visibilidad */
 }
-*/
 
+.image-gallery {
+    display: flex; /* Usar flexbox para alinear imágenes horizontalmente */
+    overflow-x: auto; /* Activar scroll horizontal */
+    max-width: 100%; /* Limitar el ancho de la galería */
+    white-space: nowrap; /* Prevenir que las imágenes se desplacen hacia abajo */
+}
 
+.image-gallery img {
+    max-height: 300px; /* Ajustar el tamaño de las imágenes */
+    margin-right: 10px; /* Espacio entre las imágenes */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
 
 
 /* Estilos para la paginación */
