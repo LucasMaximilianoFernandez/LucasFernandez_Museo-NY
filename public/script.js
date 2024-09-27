@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const departmentSelect = document.getElementById('department');
     const keywordInput = document.getElementById('keyword');
@@ -38,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const location = locationSelect.value;  // Recuperamos el valor del select de localización
         console.log("Filtro de localización:", location);
 
-        let url = `${apiBase}/objects?`;
+        let url = `${apiBase}/search?`;
         if (department) url += `departmentIds=${department}&`;
-        if (keyword) url += `q=${keyword}&`;
+        if (keyword) {url += `q=${keyword}&`} else {url += `q=*&`;}
         if (location) url += `geoLocation=${location}&`;
         url = url.slice(0, -1);
 
