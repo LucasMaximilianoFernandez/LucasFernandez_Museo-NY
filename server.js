@@ -9,7 +9,7 @@ const fetch = (...args) => import('node-fetch').then(module => module.default(..
 const app = express();
 const PORT = 3000;
 
-app.get('/favicon.ico', (req, res) => res.status(204));
+//app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))
